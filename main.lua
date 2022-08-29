@@ -24,12 +24,12 @@ local enemies = {}
 function love.load()
     love.window.setTitle("Save the Ball")
     love.mouse.setVisible(false)
-
+    
     table.insert(enemies, 1, enemy())
 end
 
 function love.update(dt)
-    player.x, player.y = love.mouse.getPosition()    
+    player.x, player.y = love.mouse.getPosition()
 
     for i = 1, #enemies do
         enemies[i]:move(player.x, player.y)
@@ -41,7 +41,7 @@ function love.draw()
 
     if game.state["running"] then
         for i = 1, #enemies do
-            enemies[i]:drwa()
+            enemies[i]:draw()
         end 
 
         love.graphics.circle("fill", player.x, player.y, player.radius)

@@ -1,5 +1,3 @@
-local love = require("love")
-
 function Enemy()
     local dice = math.random(1, 4)
     local _x, _y
@@ -28,13 +26,13 @@ function Enemy()
         move = function(self, player_x, player_y)
             if player_x - self.x > 0 then
                 self.x = self.x + self.level
-            elseif player_x - self.x < o then
-                selx.x = self.x - self.level
+            elseif player_x - self.x < 0 then
+                self.x = self.x - self.level
             end
             if player_y - self.y > 0 then
                 self.y = self.y + self.level
-            elseif player_y - self.y < o then
-                sely.y = self.y - self.level
+            elseif player_y - self.y < 0 then
+                self.y = self.y - self.level
             end
         end,
 
@@ -48,4 +46,4 @@ function Enemy()
     }
 end
 
-return Enemy()
+return Enemy

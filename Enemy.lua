@@ -23,8 +23,8 @@ function Enemy(level)
         x = _x,
         y = _y,
 
-        checkTouched = function (self, player_x, player_y, cursor_radius)
-            return math.sqrt((self.x - player_x) ^ 2 + (self.y - player_y) ^ 2 <= cursor_radius * 2)
+        checkTouched = function(self, player_x, player_y, cursor_radius)
+            return math.sqrt((self.x - player_x) ^ 2 + (self.y - player_y)) ^ 2 <= cursor_radius * 2
         end,
 
         move = function(self, player_x, player_y)
